@@ -4,6 +4,7 @@
 
 :root {
   --color-orange: rgb(237, 100, 57);
+  --padding-or-margin: 40px;
 }
 
 /*** 
@@ -30,15 +31,16 @@
 .menu--main {
   display: flex;
   line-height: 4.5rem;
-  padding-right: 40px;
+  padding-right: var(--padding-or-margin);
   text-align: center;
 }
 
 .menu--item {
   border-bottom: 3px rgba(0, 0, 0, 0) solid;
   color: black;
+  z-index: 1;
   height: 100%;
-  margin-left: 45px;
+  margin-left: var(--padding-or-margin);
 }
 
 .menu--item:hover {
@@ -47,20 +49,19 @@
 }
 
 .menu--secondary {
-  /* TODO: Make this visible
-  display: flex;  */
   background-color: white;
   color: black;
   display: none;
   flex-direction: column;
   line-height: 2.5rem;
-  /* margin-top: 10px; */
   margin-left: -18px;
   padding-bottom: 15px;
   padding-left: 18px;
   padding-right: 18px;
   position: absolute;
   text-align: left;
+  z-index: 0;
+  margin-top: 5px;
 }
 
 .menu--item:hover .menu--secondary {
@@ -81,7 +82,7 @@
 }
 
 .menu--item-secondary:first-child {
-  padding-top: 10px;
+  /* padding-top: 10px; */
 }
 
 .logo {
@@ -95,7 +96,7 @@
   color: black;
   font-size: 1rem;
   line-height: normal;
-  margin-left: 45px;
+  margin-left: var(--padding-or-margin);
   padding: 10px 17px;
   text-transform: uppercase;
 }
@@ -205,13 +206,23 @@
 
 @media screen and (max-width: 700px) {
   .wrapper--h1 {
-    font-size: 3rem;
+    font-size: 2.8rem;
     line-height: 3rem;
   }
 }
 @media screen and (max-width: 900px) {
   .menu {
     visibility: hidden;
+  }
+
+  .button--cta {
+    padding: 12px 20px;
+    /* font-size: 1rem; */
+    margin: var(--padding-or-margin);
+  }
+
+  .menu--item {
+    display: none;
   }
 
   .menu--icon {
@@ -224,7 +235,7 @@
   }
 
   .wrapper--header {
-    flex-direction: unset;
+    flex-direction: column;
     justify-content: flex-start;
   }
 
@@ -234,8 +245,11 @@
 
   .container--card {
     height: 500px;
-    margin-top: 4%;
-    padding-top: 20px;
+    margin-top: var(--padding-or-margin);
+    /* padding-top: 20px; */
     width: 400px;
+  }
+  .container--card:first-child {
+    margin-top: 0%;
   }
 }
