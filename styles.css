@@ -5,6 +5,7 @@
 :root {
   --color-orange: rgb(237, 100, 57);
   --padding-or-margin-40px: 40px;
+  --padding-or-margin-30px: 30px;
   --padding-or-margin-20px: 20px;
 }
 
@@ -259,5 +260,20 @@
     min-height: 250px;
     min-width: 200px;
     width: 80%;
+    align-items: flex-end;
+  }
+
+  .container__card .container__card-texts {
+    visibility: visible;
+    padding-bottom: var(--padding-or-margin-30px);
+  }
+
+  .container__card-h2 {
+    padding-top: 0px;
+  }
+
+  .container__card-p {
+    padding-bottom: 0;
+    text-transform: uppercase;
   }
 }
