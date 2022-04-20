@@ -86,6 +86,11 @@
   /* padding-top: 10px; */
 }
 
+.menu__main-mobile {
+  display: block;
+  background-color: red;
+}
+
 .logo {
   padding: 15px 40px;
 }
@@ -111,7 +116,6 @@
 .button__cta {
   background-color: var(--color-orange);
   color: white;
-  font-size: 1.1rem;
   height: 55px;
   padding: 12px 22px;
   text-transform: uppercase;
@@ -154,7 +158,6 @@
   margin-top: 30px;
 }
 
-/* TODO: Improve responsive behaviour */
 .container__card {
   align-items: center;
   aspect-ratio: 1 / 1.2;
@@ -214,7 +217,11 @@
   }
 }
 @media screen and (max-width: 900px) {
-  .menu {
+  /* .menu {
+    visibility: hidden;
+  } */
+
+  .menu .button {
     visibility: hidden;
   }
 
