@@ -5,6 +5,7 @@
 :root {
   --color-orange: rgb(237, 100, 57);
   --padding-or-margin-40px: 40px;
+  --padding-or-margin-20px: 20px;
 }
 
 /*** 
@@ -156,15 +157,16 @@
 /* TODO: Improve responsive behaviour */
 .container__card {
   align-items: center;
+  aspect-ratio: 1 / 1.2;
   background-position: center;
   background-size: cover;
   border-radius: 30px;
   color: white;
   display: flex;
   justify-content: center;
-  min-height: 350px;
-  min-width: 30%;
+  min-height: 315px;
   text-align: center;
+  width: 30%;
 }
 
 .container__card--toys {
@@ -227,12 +229,16 @@
   .wrapper__h1 {
     font-size: 3.2rem;
     line-height: 3rem;
-    padding-bottom: var(--padding-or-margin-40px);
+    padding: var(--padding-or-margin-20px) 0;
   }
 
   .wrapper__header {
     flex-direction: column;
     justify-content: flex-start;
+    text-align: center;
+  }
+  .wrapper__texts {
+    padding-bottom: var(--padding-or-margin-20px);
   }
 
   .container {
@@ -240,11 +246,11 @@
   }
 
   .container__card {
-    height: 500px;
+    /* height: 450px; */
+    aspect-ratio: 1 / 1.2;
     margin-top: var(--padding-or-margin-40px);
-    width: 400px;
+    min-height: 250px;
+    min-width: 200px;
+    width: 80%;
   }
-  /* .container__card:first-child {
-    margin-top: var(--padding-or-margin-40px);
-  } */
 }
