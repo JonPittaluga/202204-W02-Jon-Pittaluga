@@ -4,7 +4,9 @@
 
 :root {
   --color-orange: rgb(237, 100, 57);
-  --padding-or-margin: 40px;
+  --padding-or-margin-40px: 40px;
+  --padding-or-margin-30px: 30px;
+  --padding-or-margin-20px: 20px;
 }
 
 /*** 
@@ -31,7 +33,7 @@
 .menu__main {
   display: flex;
   line-height: 4.5rem;
-  padding-right: var(--padding-or-margin);
+  padding-right: var(--padding-or-margin-40px);
   text-align: center;
 }
 
@@ -40,7 +42,7 @@
   color: black;
   z-index: 1;
   height: 100%;
-  margin-left: var(--padding-or-margin);
+  margin-left: var(--padding-or-margin-40px);
 }
 
 .menu__item:hover {
@@ -85,6 +87,11 @@
   /* padding-top: 10px; */
 }
 
+.menu__main-mobile {
+  display: block;
+  background-color: red;
+}
+
 .logo {
   padding: 15px 40px;
 }
@@ -96,7 +103,7 @@
   color: black;
   font-size: 1rem;
   line-height: normal;
-  margin-left: var(--padding-or-margin);
+  margin-left: var(--padding-or-margin-40px);
   padding: 10px 17px;
   text-transform: uppercase;
 }
@@ -110,11 +117,11 @@
 .button__cta {
   background-color: var(--color-orange);
   color: white;
-  font-size: 1.1rem;
   height: 55px;
   padding: 12px 22px;
   text-transform: uppercase;
 }
+
 .button__cta:hover {
   background-color: white;
   border: 2px var(--color-orange) solid;
@@ -152,18 +159,18 @@
   margin-top: 30px;
 }
 
-/* TODO: Improve responsive behaviour */
 .container__card {
   align-items: center;
+  aspect-ratio: 1 / 1.2;
   background-position: center;
   background-size: cover;
   border-radius: 30px;
   color: white;
   display: flex;
   justify-content: center;
-  min-height: 350px;
-  min-width: 30%;
+  min-height: 315px;
   text-align: center;
+  width: 30%;
 }
 
 .container__card--toys {
@@ -211,14 +218,12 @@
   }
 }
 @media screen and (max-width: 900px) {
-  .menu {
+  /* .menu {
     visibility: hidden;
-  }
+  } */
 
-  .button__cta {
-    padding: 12px 20px;
-    /* font-size: 1rem; */
-    margin: var(--padding-or-margin);
+  .menu .button {
+    visibility: hidden;
   }
 
   .menu__item {
@@ -230,13 +235,18 @@
   }
 
   .wrapper__h1 {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     line-height: 3rem;
+    padding: var(--padding-or-margin-20px) 0;
   }
 
   .wrapper__header {
     flex-direction: column;
     justify-content: flex-start;
+    text-align: center;
+  }
+  .wrapper__texts {
+    padding-bottom: var(--padding-or-margin-20px);
   }
 
   .container {
@@ -244,11 +254,26 @@
   }
 
   .container__card {
-    height: 500px;
-    margin-top: var(--padding-or-margin);
-    width: 400px;
+    /* height: 450px; */
+    aspect-ratio: 1 / 1.2;
+    margin-top: var(--padding-or-margin-40px);
+    min-height: 250px;
+    min-width: 200px;
+    width: 80%;
+    align-items: flex-end;
   }
-  .container__card:first-child {
-    margin-top: 10%;
+
+  .container__card .container__card-texts {
+    visibility: visible;
+    padding-bottom: var(--padding-or-margin-30px);
+  }
+
+  .container__card-h2 {
+    padding-top: 0px;
+  }
+
+  .container__card-p {
+    padding-bottom: 0;
+    text-transform: uppercase;
   }
 }
